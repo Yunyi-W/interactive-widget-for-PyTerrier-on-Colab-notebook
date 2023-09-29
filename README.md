@@ -1,10 +1,10 @@
 # interactive-widget-for-PyTerrier-on-Colab-notebook
 This notebook will provide guidance to use our proposed fig_display() method to simplify your IR experimental process using PyTerrier.  Please read the API and then follow the guidance to try each function of the method.
 
-# API
+ API
 fig_display(pipelines, topics=None, qrels=None, eval_metrics=None, names=None,perquery=False, baseline=None, **kwargs)
 
-# Introduction
+ Introduction
 
 fig_display() is a UI tool for PyTerrier based on ipywidgets, i.e. a user interface for IR experiments that can be used within Jupyter notebooks.
 
@@ -12,25 +12,25 @@ Users can use this method to see the results of IR experiments and compare them 
 
 The tool offers various functionalities. When the preconditions of a given functionality is satisfied, the functionalities is available. If more than one function's condition is satisfied, multiple functionalities will be available.
 
-# Functionalities
+ Functionalities
 
-# 1. Display results for a query ("SINGLE QUERY" tab)
+ 1. Display results for a query ("SINGLE QUERY" tab)
 
 If the parameter 'topics' is None, the result of retrieval transformation will be shown after the user enters a text-based query.
 
 If the parameter 'topics' contains a DataFrame of topics (e.g. obtained from a dataset, c.f. dataset.get_topics()), then users can select a system and a query from those they input to view the result. If qrels are also provided, the label documents of documents will also be displayed (c.f. relevant or not).
 
-# 2. Comparison of two systems side by side ("COMPARE" tab)
+ 2. Comparison of two systems side by side ("COMPARE" tab)
 
 If there is more than one transformer pipeline, a comparison of the results of two transformer pipelines can be shown side by side.
 
-# 3. Average performance ("AVERAGE PERFORMANCE" tab)
+ 3. Average performance ("AVERAGE PERFORMANCE" tab)
 
 When there is more than one transformer pipeline, if the parameter 'perquery' is True, a figure of the difference of the value of a pt.Experiment() between two transformer pipelines with the specificed evaluation measures can be shown. Users can select any two pipelines and any one measure from the parameter they input and they also can choose the threshold of the difference to filter the result whereas (perquery is False), the table of the result of the experiment() will be shown.
 
 !Note: the figure file of the picture can be downloaded from "Files" by clicking the file icon on the left side, then putting the mouse on fig.jpg and clicking "..." to choose "download".
 
-#Parameters:
+Parameters:
 
 In general, the parameters to fig_display() correspond to the parameters supported by pt.Experiment(), and should be familiar to any experienced PyTerrier user.
 
